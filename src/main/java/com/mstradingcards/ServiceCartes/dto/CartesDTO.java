@@ -3,7 +3,6 @@ package com.mstradingcards.ServiceCartes.dto;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import com.mstradingcards.ServiceCartes.enums.Rarity;
 
@@ -27,7 +26,6 @@ public class CartesDTO {
     private Integer health;
 
     @NotBlank(message = "Description is required")
-    @Size(max = 255, message = "Description cannot exceed 255 characters")
     private String description;
 
 	public String getName() {

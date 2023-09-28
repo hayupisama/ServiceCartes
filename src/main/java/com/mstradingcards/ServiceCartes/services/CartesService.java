@@ -91,27 +91,11 @@ public class CartesService {
 	}
 
 	private List<CartesDTO> mapToCardDTOList(List<Cartes> cards) {
-		return cards.stream().map(card -> {
-			CartesDTO cardDTO = new CartesDTO();
-			cardDTO.setName(card.getName());
-			cardDTO.setRarity(card.getRarity());
-			cardDTO.setAttack(card.getAttack());
-			cardDTO.setHealth(card.getHealth());
-			cardDTO.setDescription(card.getDescription());
-			return cardDTO;
-		}).collect(Collectors.toList());
+		return cards.stream().map(this::mapToCardDTO).collect(Collectors.toList());
 	}
 
 	private List<Cartes> mapToCardList(List<CartesDTO> cardsDTO) {
-		return cardsDTO.stream().map(cardDTO -> {
-			Cartes card = new Cartes();
-			card.setName(cardDTO.getName());
-			card.setRarity(cardDTO.getRarity());
-			card.setAttack(cardDTO.getAttack());
-			card.setHealth(cardDTO.getHealth());
-			card.setDescription(cardDTO.getDescription());
-			return card;
-		}).collect(Collectors.toList());
+		return cardsDTO.stream().map(this::mapToCardEntity).collect(Collectors.toList());
 	}
 
 }

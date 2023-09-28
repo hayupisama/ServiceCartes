@@ -1,5 +1,6 @@
 package com.mstradingcards.ServiceCartes.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -44,6 +45,7 @@ public class Cartes {
     private Integer health;
 
     @NotBlank(message = "Description is required")
+    @Column(columnDefinition = "TEXT")
     private String description;
 
 	public Long getId() {
