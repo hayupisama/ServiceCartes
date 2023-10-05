@@ -82,6 +82,7 @@ public class CartesService {
 
 	private CartesDTO mapToCardDTO(Cartes card) {
 		CartesDTO dto = new CartesDTO();
+		dto.setId(card.getId());
 		dto.setName(card.getName());
 		dto.setRarity(card.getRarity());
 		dto.setAttack(card.getAttack());
